@@ -9,7 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="assets/js/index.js"></script>
     <title>Peliculas</title>
 </head>
 
@@ -21,31 +20,39 @@
                 <h1>Películas favoritas - LocalStorage</h1>
             </div>
             <div class="col-md-12 mt-4">
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://i.pinimg.com/originals/91/13/79/911379ee2a1bc5388414ec692aea80d7.jpg"
-                                class="img-fluid rounded-start" alt="pelicula">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Strange: hechicero supremo</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">2016 - Accion/Aventura</h6>
-                                <p class="card-text">En Katmandú, Nepal, el hechicero Kaecilius y sus fanáticos entran
-                                    en el recinto secreto de Kamar-Taj y asesinan a su bibliotecario, guardián de textos
-                                    antiguos y místicos. Roban un ritual de un libro prohibido por The Ancient One, una
-                                    hechicera que ha vivido durante un tiempo desconocido y que ha enseñado a todos en
-                                    Kamar-Taj, incluyendo Kaecilius, en los caminos de las artes místicas.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small>
-                                </p>
-                            </div>
-                        </div>
+                <h3 class="text-primary">Agregar pelicula</h3>
+                <div class="mb-3">
+                    <label for="inputTitulo" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" id="inputTitulo">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-sm-6">
+                        <label for="inputEstreno" class="form-label">Año estreno</label>
+                        <input type="text" class="form-control" id="inputEstreno">
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                        <label for="inputGenero" class="form-label">Genero</label>
+                        <input type="text" class="form-control" id="inputGenero">
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label for="inputImagen" class="form-label">URL Imagen</label>
+                    <input type="text" class="form-control" id="inputImagen">
+                </div>
+                <div class="mb-3">
+                    <label for="inputSinopsis" class="form-label">Sinopsis</label>
+                    <textarea class="form-control" id="inputSinopsis" rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" id="btnAgregar">Agregar</button>
+                    <button class="btn btn-danger" type="button" id="btnBorrarTodo">Borrar todo</button>
+                </div>
+            </div>
+            <div class="col-md-12 mt-4" id="divPeliculas">
             </div>
         </div>
     </div>
-
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>

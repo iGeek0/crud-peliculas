@@ -1,0 +1,16 @@
+[
+    {
+        "titulo": "Psicosis",
+        "estreno": "1960",
+        "genero": "Suspenso/Terror",
+        "imagen": "https://www.themoviedb.org/t/p/original/oSsAYKJgQXzVAx342FAmVaSp15u.jpg",
+        "sinopsis": "La secretaria de una empresa inmobiliaria, Marion Crane, no puede casarse con su amante, Sam Loomis. El destino pone en sus manos 40.000 dólares en efectivo que su jefe le confía para depositarlos en el banco. Marion decide apoderarse de esa suma para comenzar con Sam una nueva vida."
+    },
+    {
+        "titulo": "Doctor Strange: hechicero supremo",
+        "estreno": "2016",
+        "genero": "Accion/Aventura",
+        "imagen": "https://i.pinimg.com/originals/91/13/79/911379ee2a1bc5388414ec692aea80d7.jpg",
+        "sinopsis": "En Katmandú, Nepal, el hechicero Kaecilius y sus fanáticos entran\n                                    en el recinto secreto de Kamar-Taj y asesinan a su bibliotecario, guardián de textos\n                                    antiguos y místicos. Roban un ritual de un libro prohibido por The Ancient One, una\n                                    hechicera que ha vivido durante un tiempo desconocido y que ha enseñado a todos en\n                                    Kamar-Taj, incluyendo Kaecilius, en los caminos de las artes místicas."
+    }
+]

@@ -11,6 +11,7 @@ let btnAgregar = document.getElementById("btnAgregar");
 let btnBorrarTodo = document.getElementById("btnBorrarTodo");
 let divPeliculas = document.getElementById("divPeliculas");
 let alertSinPeliculas = document.getElementById("alertSinPeliculas");
+let indexEditar = null;
 class Pelicula {
     constructor(titulo, estreno, genero, imagen, sinopsis) {
         this.titulo = titulo;
@@ -21,27 +22,44 @@ class Pelicula {
     }
 }
 
-function agregarPelicula() {
+function guardarPelicula() {
     let titulo = inputTitulo.value;
     let estreno = inputEstreno.value;
     let genero = inputGenero.value;
     let imagen = inputImagen.value;
     let sinopsis = inputSinopsis.value;
     let pelicula = new Pelicula(titulo, estreno, genero, imagen, sinopsis);
-    peliculas.push(pelicula);
+    if (indexEditar === null) {
+        console.log("Agregando pelicula");
+        peliculas.push(pelicula);
+    } else {
+        console.log("Editando pelicula");
+        peliculas[indexEditar] = pelicula;
+        indexEditar = null;
+    }
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
     mostrarPeliculas();
     limpiarFormulario();
+    alert("Pelicula guardada");
 }
 
 function eliminarPelicula(index) {
     console.log(index);
-    // peliculas.splice(index, 1);
-    // localStorage.setItem("peliculas", JSON.stringify(peliculas));
-    // mostrarPeliculas();
+    peliculas.splice(index, 1);
+    localStorage.setItem("peliculas", JSON.stringify(peliculas));
+    mostrarPeliculas();
+    alert("Pelicula eliminada");
 }
 
-function editarPelicula() { }
+function editarPelicula(index) {
+    indexEditar = index;
+    let peliculaAEditar = peliculas[index];
+    inputTitulo.value = peliculaAEditar.titulo;
+    inputEstreno.value = peliculaAEditar.estreno;
+    inputGenero.value = peliculaAEditar.genero;
+    inputImagen.value = peliculaAEditar.imagen;
+    inputSinopsis.value = peliculaAEditar.sinopsis;
+}
 
 function mostrarPeliculas() {
     if (peliculas.length === 0) {
@@ -51,9 +69,7 @@ function mostrarPeliculas() {
         </div>`;
     } else {
         divPeliculas.innerHTML = "";
-        // peliculas.forEach((pelicula) => {
         peliculas.forEach((pelicula, index) => {
-            console.log(index);
             divPeliculas.innerHTML += `
                 <div class="card mb-3">
                    <div class="row g-0">
@@ -67,10 +83,10 @@ function mostrarPeliculas() {
                             <p class="card-text">${pelicula.sinopsis}</p>
                             <div class="row mb-2">
                                <div class="col">
-                                  <button class="btn btn-warning w-100 mt-2" type="button">Editar</button>
+                                  <button class="btn btn-warning w-100 mt-2" type="button" id="editar-${index}" onclick="editarPelicula(${index})">Editar</button>
                                </div>
                                <div class="col">
-                                  <button class="btn btn-danger w-100 mt-2" type="button" id="eliminar-${index}">Eliminar</button>
+                                  <button class="btn btn-danger w-100 mt-2" type="button" id="eliminar-${index}" onclick="eliminarPelicula(${index})">Eliminar</button>
                                </div>
                             </div>
                          </div>
@@ -78,10 +94,6 @@ function mostrarPeliculas() {
                    </div>
                 </div>
             `;
-            let botonEliminar = document.getElementById(`eliminar-${index}`);
-            botonEliminar.addEventListener('click', (index) => {
-                eliminarPelicula(index);
-            });
         });
     }
 }
@@ -90,6 +102,7 @@ function borrarTodo() {
     localStorage.clear();
     peliculas = [];
     mostrarPeliculas();
+    alert("Peliculas borradas");
 }
 
 function limpiarFormulario() {
@@ -100,7 +113,7 @@ function limpiarFormulario() {
     inputSinopsis.value = "";
 }
 
-btnAgregar.addEventListener("click", agregarPelicula);
+btnAgregar.addEventListener("click", guardarPelicula);
 btnBorrarTodo.addEventListener("click", borrarTodo);
 
 mostrarPeliculas();

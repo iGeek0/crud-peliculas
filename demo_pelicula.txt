@@ -11,6 +11,13 @@
         "estreno": "2016",
         "genero": "Accion/Aventura",
         "imagen": "https://i.pinimg.com/originals/91/13/79/911379ee2a1bc5388414ec692aea80d7.jpg",
-        "sinopsis": "En Katmandú, Nepal, el hechicero Kaecilius y sus fanáticos entran\n                                    en el recinto secreto de Kamar-Taj y asesinan a su bibliotecario, guardián de textos\n                                    antiguos y místicos. Roban un ritual de un libro prohibido por The Ancient One, una\n                                    hechicera que ha vivido durante un tiempo desconocido y que ha enseñado a todos en\n                                    Kamar-Taj, incluyendo Kaecilius, en los caminos de las artes místicas."
+        "sinopsis": "La vida del famoso neurocirujano Dr. Stephen Strange cambia para siempre cuando un terrible accidente de coche le arrebata el uso de sus manos. Cuando la medicina tradicional le falla, busca la curación en un lugar misterioso llamado Kamar-Taj, que no solo es un centro de curación sino también el frente de una batalla contra fuerzas oscuras ocultas."
+    }
+    {
+        "titulo": "El origen",
+        "estreno": "2010",
+        "genero": "Acción/Ciencia ficción",
+        "imagen": "https://www.themoviedb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg",
+        "sinopsis": "Dom Cobb (Leonardo DiCaprio) es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarle los secretos de sus subconscientes. Su habilidad lo ha convertido en un atractivo en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama. "
     }
 ]
